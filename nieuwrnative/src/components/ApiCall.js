@@ -11,6 +11,7 @@ import EntypoIcon from "react-native-vector-icons/Entypo";
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 import FeatherIcon from "react-native-vector-icons/Feather";
 import { TapGestureHandler } from "react-native-gesture-handler";
+import styles from '../screens/NewsHome'
 
 export default class ApiCall extends Component{
     constructor(props){
@@ -39,49 +40,43 @@ export default class ApiCall extends Component{
     }
 
     render(){
-      console.log(this.state.articles[0])
       let dataReturned = this.state.dataIsReturned
       let articlesList = null
 
+      const styles = StyleSheet.create({
+        button: {
+          width: 316,
+          height: 178,
+          backgroundColor: "#E6E6E6",
+          marginTop: 15,
+          alignSelf: "center"
+        }
+      })
+
       if (dataReturned) {
         articlesList = this.state.articles[0].map((item, i) =>
-              <View key={i}>
-                <Text>{item.title}</Text>
-            </View>)
+              <TouchableOpacity
+                      onPress={() => this.props.data.navigation.navigate("DetailPage")}
+                      style={styles.button}
+                    >
+                    <View key={i}>
+                      <Text>{item.title}</Text>
+                  </View>
+            </TouchableOpacity>)
        } else {
         articlesList = <Text>Loading</Text>
        } 
-       
 
         return (
-
             <View>
-              <TouchableOpacity
-                onPress={() => props.navigation.navigate("DetailPage")}
-              >
-               
               {articlesList}
-              </TouchableOpacity>
-
               </View>
         )
+
+
     }
+
+
 }
 
-     
-
-                // <div className="news-item" style={{backgroundColor: "orange"}} key={i}>    
-            
-                
-                /* <div className="description"><h4>{this.state.artikelen.articles[i].description}</h4></div>
-                <div className="content">{this.state.artikelen.articles[i].content}</div>
-                <div className="author">{this.state.artikelen.articles[i].author}</div>
-                <br/>
-                <br/>
-          
-              </div> */
-// Api
-// response -> state
-// state -> artikel
-// in newsHome foreach(artikels)
-// in detailPage key meesturen van geklikt artikel en nieuwe api call
+  

@@ -184,8 +184,7 @@ function NewsHome(props) {
               contentContainerStyle={styles.scrollArea3_contentContainerStyle}
               >
 
-              {/* Foreach artikeltje*/}
-       <ApiCall/>
+       <ApiCall data={props}/>
 
        </ScrollView>
           </View>

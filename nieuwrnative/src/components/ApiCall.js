@@ -16,8 +16,8 @@ export default class ApiCall extends Component{
     constructor(props){
         super(props);
         this.state={
-            artikelen: {},
-            fetching: false
+            articles: [],
+            dataIsReturned: false
         };
     }
 
@@ -25,44 +25,42 @@ export default class ApiCall extends Component{
         let apiUrl  = "https://newsapi.org/v2/top-headlines?country=nl&pageSize=10&apiKey=e694ed44263f48f0928cc00b9d3edde3"
         fetch(apiUrl)
         .then(response => response.json())
-        .then(response => {
+        .then(data => {
             // this.setState({ postList: response.data.children, fetching: false });
-            this.setState({artikelen:response, fetching: true})
+            this.setState({
+              articles: [...this.state.articles, data['articles']],
+              dataIsReturned: true
+            })
           })
 
           .catch(err => {
-            this.setState({ fetching: false });
             console.log(err)
           });
     }
 
     render(){
-        // const {styles} = props
+      console.log(this.state.articles[0])
+      let dataReturned = this.state.dataIsReturned
+      let articlesList = null
 
-        listArticles = 
-            this.state.artikelen.articles.map((keyName, i) => {
-                return(
-                    <View key={i}>
-                        <Text key={i}>{keyName.title}</Text>
-                        {console.log(keyName.title)}
-                    </View>
-                )
-            }
-              
-                
-            )}
-        }
+      if (dataReturned) {
+        articlesList = this.state.articles[0].map((item, i) =>
+              <View key={i}>
+                <Text>{item.title}</Text>
+            </View>)
+       } else {
+        articlesList = <Text>Loading</Text>
+       } 
+       
+
         return (
 
             <View>
               <TouchableOpacity
                 onPress={() => props.navigation.navigate("DetailPage")}
               >
-
-            {/* <Text>{this.listArticles()}</Text> */}
-                
-                {this.listArticles()}
-
+               
+              {articlesList}
               </TouchableOpacity>
 
               </View>
@@ -70,7 +68,8 @@ export default class ApiCall extends Component{
     }
 }
 
-      
+     
+
                 // <div className="news-item" style={{backgroundColor: "orange"}} key={i}>    
             
                 

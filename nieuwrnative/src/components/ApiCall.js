@@ -56,11 +56,12 @@ export default class ApiCall extends Component{
       if (dataReturned) {
         articlesList = this.state.articles[0].map((item, i) =>
               <TouchableOpacity
-                      onPress={() => this.props.data.navigation.navigate("DetailPage")}
+                      onPress={() => this.props.data.navigation.navigate("DetailPage", {itemId: i})}
                       style={styles.button}
+                      key={i}
                     >
                     <View key={i}>
-                      <Text>{item.title}</Text>
+                      <Text key={i}>{item.title}</Text>
                   </View>
             </TouchableOpacity>)
        } else {

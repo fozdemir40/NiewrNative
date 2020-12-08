@@ -10,7 +10,8 @@ import FeatherIcon from "react-native-vector-icons/Feather";
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 
-function DetailPage(props) {
+function DetailPage({navigation}) {
+  const itemId = navigation.getParam('itemId')
   return (
     <View style={styles.container}>
       <View style={styles.scrollAreaColumn}>
@@ -29,7 +30,11 @@ function DetailPage(props) {
                       heel lauw voor een &quot;Little man&quot;. Weifang helpt
                       niet met het project mee omdat ie bij z&#39;n vriendin is.
                       Hij is echt een Simp.
+                      <br/>
+                      <br/>
+                      ItemId taken from article: {JSON.stringify(itemId)}
                     </Text>
+                    <Text></Text>
                     <View style={styles.group2}>
                       <Text style={styles.e2}>
                         Eddie is een Bitch en Weifang een Simp!!

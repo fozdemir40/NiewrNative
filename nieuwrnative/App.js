@@ -4,16 +4,33 @@ import { createStackNavigator } from "react-navigation-stack";
 import { createDrawerNavigator } from "react-navigation-drawer";
 import { AppLoading } from "expo";
 import * as Font from "expo-font";
-import NewsHome from "./components/NewsHome";
+import DetailPage from "./src/screens/DetailPage";
+import NewsHome from "./src/screens/NewsHome";
+import SettingPage from "./src/screens/SettingPage";
+import StartPage from "./src/screens/StartPage";
+import TopicPage from "./src/screens/TopicPage";
+import RegionSelect from "./src/screens/RegionSelect";
 
-const DrawerNavigation = createDrawerNavigator({ NewsHome: NewsHome });
+const DrawerNavigation = createDrawerNavigator({
+  DetailPage: DetailPage,
+  NewsHome: NewsHome,
+  SettingPage: SettingPage,
+  StartPage: StartPage,
+  TopicPage: TopicPage,
+  RegionSelect: RegionSelect
+});
 
 const StackNavigation = createStackNavigator(
   {
     DrawerNavigation: {
       screen: DrawerNavigation
     },
-    NewsHome: NewsHome
+    DetailPage: DetailPage,
+    NewsHome: NewsHome,
+    SettingPage: SettingPage,
+    StartPage: StartPage,
+    TopicPage: TopicPage,
+    RegionSelect: RegionSelect
   },
   {
     headerMode: "none"
@@ -37,11 +54,14 @@ function App() {
   }
 }
 async function loadResourcesAsync() {
-  await Promise.all([ 
+  await Promise.all([
     Font.loadAsync({
-      "roboto-700": require("./src/assets/roboto-700.ttf")
+      "roboto-700": require("./src/assets/fonts/roboto-700.ttf"),
+      "roboto-regular": require("./src/assets/fonts/roboto-regular.ttf"),
+      "roboto-italic": require("./src/assets/fonts/roboto-italic.ttf"),
+      "alfa-slab-one-regular": require("./src/assets/fonts/alfa-slab-one-regular.ttf")
     })
-  ]); 
+  ]);
 }
 function handleLoadingError(error) {
   console.warn(error);

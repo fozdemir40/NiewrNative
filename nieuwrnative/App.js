@@ -10,6 +10,7 @@ import SettingPage from "./src/screens/SettingPage";
 import StartPage from "./src/screens/StartPage";
 import TopicPage from "./src/screens/TopicPage";
 import RegionSelect from "./src/screens/RegionSelect";
+import OwnRegion from "./src/screens/OwnRegion";
 
 const DrawerNavigation = createDrawerNavigator({
   DetailPage: DetailPage,
@@ -17,7 +18,8 @@ const DrawerNavigation = createDrawerNavigator({
   SettingPage: SettingPage,
   StartPage: StartPage,
   TopicPage: TopicPage,
-  RegionSelect: RegionSelect
+  RegionSelect: RegionSelect,
+    OwnRegion: OwnRegion
 });
 
 const StackNavigation = createStackNavigator(
@@ -30,7 +32,8 @@ const StackNavigation = createStackNavigator(
     SettingPage: SettingPage,
     StartPage: StartPage,
     TopicPage: TopicPage,
-    RegionSelect: RegionSelect
+    RegionSelect: RegionSelect,
+      OwnRegion: OwnRegion
   },
   {
     headerMode: "none"

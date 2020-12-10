@@ -3,6 +3,7 @@ import {
   StyleSheet,
   View,
   Text,
+  Image,
   ScrollView,
   TouchableOpacity
 } from "react-native";
@@ -11,7 +12,6 @@ import EntypoIcon from "react-native-vector-icons/Entypo";
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 import FeatherIcon from "react-native-vector-icons/Feather";
 import { TapGestureHandler } from "react-native-gesture-handler";
-import styles from '../screens/NewsHome'
 
 export default class ApiCall extends Component{
     constructor(props){
@@ -23,7 +23,10 @@ export default class ApiCall extends Component{
     }
 
     componentDidMount() {
-        let apiUrl  = "https://newsapi.org/v2/top-headlines?country=nl&pageSize=10&apiKey=e694ed44263f48f0928cc00b9d3edde3"
+        // Change keys if Cors header is not working, NewsAPI only allows 500 requests per day for free use
+        // key 1 = dd032e702bf347a7b0556dd2eb3eb177
+        // key 2 = e694ed44263f48f0928cc00b9d3edde3
+        let apiUrl  = "https://newsapi.org/v2/top-headlines?country=nl&pageSize=10&apiKey=dd032e702bf347a7b0556dd2eb3eb177"
         fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
@@ -45,11 +48,28 @@ export default class ApiCall extends Component{
 
       const styles = StyleSheet.create({
         button: {
-          width: 316,
-          height: 178,
+          width: 460,
+          height: 400,
           backgroundColor: "#E6E6E6",
           marginTop: 15,
           alignSelf: "center"
+        },
+        containerImage:{
+          marginTop: 20,
+          alignSelf: 'center',
+          position: 'absolute',
+        },
+        image: {
+          width: 420,
+          height: 200,
+        },
+        articleTextContainer: {
+          alignSelf: 'center',
+          width: 410
+        },
+        articleText: {
+          fontSize: 20,
+          fontWeight: "bold",
         }
       })
 
@@ -60,9 +80,16 @@ export default class ApiCall extends Component{
                       style={styles.button}
                       key={i}
                     >
-                    <View key={i}>
-                      <Text key={i}>{item.title}</Text>
-                  </View>
+                    <View style={styles.containerImage}>
+                      <Image style={styles.image} source={{
+                        uri: item.urlToImage
+                      }}/>
+                      
+                      <View style={styles.articleTextContainer}>
+                        <Text style={styles.articleText}>{item.title}</Text>
+                        <Text>Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum </Text>
+                      </View>
+                    </View>
             </TouchableOpacity>)
        } else {
         articlesList = <Text>Loading</Text>

@@ -29,9 +29,7 @@ function DetailPage({navigation}) {
                       Eddie is een jongeman die heel stoer doet. Verder doet hij
                       heel lauw voor een &quot;Little man&quot;. Weifang helpt
                       niet met het project mee omdat ie bij z&#39;n vriendin is.
-                      Hij is echt een Simp.
-                      <br/>
-                      <br/>
+                      Hij is echt een Simp.{"\n"}{"\n"}
                       ItemId taken from article: {JSON.stringify(itemId)}
                     </Text>
                     <Text></Text>

@@ -431,7 +431,7 @@ const styles = StyleSheet.create({
     marginLeft: 655
   },
   scrollArea3_contentContainerStyle: {
-    height: 635
+    height: '100%'
   },
   button20: {
     width: 316,

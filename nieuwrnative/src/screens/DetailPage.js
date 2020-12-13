@@ -19,90 +19,93 @@ function DetailPage({navigation}) {
 
   const article = {
     id: JSON.stringify(itemId),
-    imageUrl: JSON.stringify(imageUrlArticle),
+    imageUrl: imageUrlArticle,
     title: JSON.stringify(titleArticle),
     content: JSON.stringify(contentArticle)
   }
 
   return (
     <View style={styles.container}>
-      <View style={styles.scrollAreaColumn}>
-        <View style={styles.scrollArea}>
-          <ScrollView
-            horizontal={false}
-            contentContainerStyle={styles.scrollArea_contentContainerStyle}
-          >
-            <View style={styles.group8}>
-              <View style={styles.group1}>
-                <Image style={styles.image} source={{
-                  uri: article.imageUrl
-                }}/>
-                <View style={styles.loremIpsumStackRow}>
-                  <View style={styles.loremIpsumStack}>
-                    <Text style={styles.loremIpsum}>
-                      {article.content}
+    <View style={styles.scrollAreaColumn}>
+      <View style={styles.scrollArea}>
+        <ScrollView
+          horizontal={false}
+          contentContainerStyle={styles.scrollArea_contentContainerStyle}
+        >
+          <View style={styles.group8}>
+            <View style={styles.group1}>
+              <View style={styles.imageStackStack}>
+                <View style={styles.imageStack}>
+                  <Image
+                    source={{uri: article.imageUrl}}
+                    resizeMode="contain"
+                    style={styles.image}
+                  ></Image>
+                  <View style={styles.group2}>
+                    <Text style={styles.e2}>
+                      {article.title}
                     </Text>
-                    <View style={styles.group2}>
-                      <Text style={styles.e2}>
-                        {article.title}
-                      </Text>
-                    </View>
                   </View>
-                  <FeatherIcon
-                    name="share-2"
-                    style={styles.icon1}
-                  ></FeatherIcon>
                 </View>
+                <Text style={styles.loremIpsum}>
+                  {article.content}
+                </Text>
+                <FeatherIcon
+                  name="share-2"
+                  style={styles.icon1}
+                ></FeatherIcon>
               </View>
-              <View style={styles.group7}>
-                <View style={styles.group3}>
-                  <View style={styles.rect2Stack}>
-                    <View style={styles.rect2}>
-                      <Text style={styles.rotterdam}>
-                        Rotterdam: 36 minuten geleden
-                      </Text>
-                      <Text style={styles.bronRegiogroeiA}>
-                        Bron: Regiogroei A
-                      </Text>
-                    </View>
-                    <EntypoIcon
-                      name="location-pin"
-                      style={styles.icon2}
-                    ></EntypoIcon>
+            </View>
+            <View style={styles.group7}>
+              <View style={styles.group3}>
+                <View style={styles.rect2Stack}>
+                  <View style={styles.rect2}>
+                    <Text style={styles.rotterdam}>
+                      Rotterdam: 36 minuten geleden
+                    </Text>
+                    <Text style={styles.bronRegiogroeiA}>
+                      Bron: Regiogroei A
+                    </Text>
                   </View>
+                  <EntypoIcon
+                    name="location-pin"
+                    style={styles.icon2}
+                  ></EntypoIcon>
                 </View>
               </View>
             </View>
-          </ScrollView>
-        </View>
-        <Text style={styles.regio}>Regio</Text>
+          </View>
+        </ScrollView>
       </View>
-      <View style={styles.scrollAreaColumnFiller}></View>
-      <View style={styles.group4}>
-        <View style={styles.rect3}>
-          <View style={styles.group6}>
-            <View style={styles.button3Filler}></View>
-            <TouchableOpacity style={styles.button3}>
-              <FontAwesomeIcon
-                name="map-o"
-                style={styles.icon5}
-              ></FontAwesomeIcon>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.group6Filler}>
-            <TouchableOpacity style={styles.button1}>
-              <FontAwesomeIcon
-                name="calendar"
-                style={styles.icon3}
-              ></FontAwesomeIcon>
-            </TouchableOpacity>
-          </View>
-          <TouchableOpacity style={styles.button2}>
-            <FeatherIcon name="settings" style={styles.icon4}></FeatherIcon>
+      <Text style={styles.regio}>Regio</Text>
+    </View>
+    <View style={styles.scrollAreaColumnFiller}></View>
+    <View style={styles.group4}>
+      <View style={styles.rect3Filler}></View>
+      <View style={styles.rect3}>
+        <View style={styles.group6}>
+          <View style={styles.button3Filler}></View>
+          <TouchableOpacity style={styles.button3}>
+            <FontAwesomeIcon
+              name="map-o"
+              style={styles.icon5}
+            ></FontAwesomeIcon>
           </TouchableOpacity>
         </View>
+        <View style={styles.group6Filler}>
+          <TouchableOpacity style={styles.button1}>
+            <FontAwesomeIcon
+              name="calendar"
+              style={styles.icon3}
+            ></FontAwesomeIcon>
+          </TouchableOpacity>
+        </View>
+        <TouchableOpacity style={styles.button2}>
+          <FeatherIcon name="settings" style={styles.icon4}></FeatherIcon>
+        </TouchableOpacity>
       </View>
     </View>
+  </View>
   );
 }
 
@@ -123,31 +126,24 @@ const styles = StyleSheet.create({
     height: 581
   },
   group8: {
-    height: 147,
-    marginTop: 38
+    height: 148,
+    marginTop: 46
   },
   group1: {
     width: 270,
     height: 147,
+    marginTop: 1,
     alignSelf: "center"
   },
-  rect1: {
-    width: 270,
-    height: 147,
-    backgroundColor: "rgba(248,231,28,1)"
-  },
-  loremIpsum: {
-    top: 25,
+  image: {
+    top: 0,
     left: 0,
-    position: "absolute",
-    fontFamily: "roboto-regular",
-    color: "#121212",
-    textAlign: "left",
-    width: 256,
-    height: 270
+    width: 262,
+    height: 200,
+    position: "absolute"
   },
   group2: {
-    top: 0,
+    top: 174,
     left: 0,
     width: 256,
     height: 279,
@@ -156,28 +152,43 @@ const styles = StyleSheet.create({
   e2: {
     fontFamily: "roboto-700",
     color: "#121212",
-    fontSize: 14
+    fontSize: 14,
+    marginTop: 21,
+    alignSelf: "center"
   },
-  loremIpsumStack: {
+  imageStack: {
+    top: 0,
+    left: 0,
+    width: 262,
+    height: 453,
+    position: "absolute"
+  },
+  loremIpsum: {
+    top: 230,
+    left: 0,
+    position: "absolute",
+    fontFamily: "roboto-regular",
+    color: "#121212",
+    textAlign: "left",
     width: 256,
-    height: 295
+    height: 270
   },
   icon1: {
+    top: 403,
+    left: 256,
+    position: "absolute",
     color: "rgba(0,0,0,1)",
-    fontSize: 50,
-    marginTop: 229
+    fontSize: 50
   },
-  loremIpsumStackRow: {
-    height: 295,
-    flexDirection: "row",
-    marginTop: 27,
-    marginLeft: 7,
-    marginRight: -43
+  imageStackStack: {
+    width: 306,
+    height: 490,
+    marginLeft: 7
   },
   group7: {
     width: 395,
     height: 43,
-    marginTop: 302
+    marginTop: 301
   },
   group3: {
     width: 239,

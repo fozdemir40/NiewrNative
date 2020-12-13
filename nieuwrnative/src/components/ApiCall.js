@@ -60,7 +60,9 @@ export default class ApiCall extends Component{
         },
         articleTextContainer: {
           alignSelf: 'center',
-          width: 410
+          width: 410,
+          position: 'absolute',
+          top: 250,
         },
         articleText: {
           fontSize: 20,
@@ -84,12 +86,13 @@ export default class ApiCall extends Component{
                       <Image style={styles.image} source={{
                         uri: item.urlToImage
                       }}/>
+                    </View>
                       
                       <View style={styles.articleTextContainer}>
                         <Text style={styles.articleText}>{item.title}</Text>
                         <Text>{item.description}</Text>
                       </View>
-                    </View>
+                    
             </TouchableOpacity>)
        } else {
         articlesList = <Text>Loading</Text>

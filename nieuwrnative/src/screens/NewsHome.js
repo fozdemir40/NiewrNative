@@ -431,7 +431,7 @@ const styles = StyleSheet.create({
     marginLeft: 655
   },
   scrollArea3_contentContainerStyle: {
-    height: 4200 //An article height is 400 pixels, so 10 * (400 + 15 marginTop ) = 4150 + 50(extra spacing) = 4200. 
+    height: 10*(400+15) + 50 //An article height is 400 pixels, so 10 * (400 + 15 marginTop ) = 4150 + 50(extra spacing) = 4200. 
   },
   button20: {
     width: 316,

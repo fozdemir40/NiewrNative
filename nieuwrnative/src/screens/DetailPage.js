@@ -3,6 +3,7 @@ import {
   StyleSheet,
   View,
   ScrollView,
+  Image,
   Text,
   TouchableOpacity
 } from "react-native";
@@ -12,6 +13,17 @@ import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 
 function DetailPage({navigation}) {
   const itemId = navigation.getParam('itemId')
+  const imageUrlArticle = navigation.getParam('imageUrl')
+  const titleArticle = navigation.getParam('titleArticle')
+  const contentArticle = navigation.getParam('contentArticle')
+
+  const article = {
+    id: JSON.stringify(itemId),
+    imageUrl: JSON.stringify(imageUrlArticle),
+    title: JSON.stringify(titleArticle),
+    content: JSON.stringify(contentArticle)
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.scrollAreaColumn}>
@@ -22,20 +34,17 @@ function DetailPage({navigation}) {
           >
             <View style={styles.group8}>
               <View style={styles.group1}>
-                <View style={styles.rect1}></View>
+                <Image style={styles.image} source={{
+                  uri: article.imageUrl
+                }}/>
                 <View style={styles.loremIpsumStackRow}>
                   <View style={styles.loremIpsumStack}>
                     <Text style={styles.loremIpsum}>
-                      Eddie is een jongeman die heel stoer doet. Verder doet hij
-                      heel lauw voor een &quot;Little man&quot;. Weifang helpt
-                      niet met het project mee omdat ie bij z&#39;n vriendin is.
-                      Hij is echt een Simp.{"\n"}{"\n"}
-                      ItemId taken from article: {JSON.stringify(itemId)}
+                      {article.content}
                     </Text>
-                    <Text></Text>
                     <View style={styles.group2}>
                       <Text style={styles.e2}>
-                        Eddie is een Bitch en Weifang een Simp!!
+                        {article.title}
                       </Text>
                     </View>
                   </View>
@@ -70,7 +79,6 @@ function DetailPage({navigation}) {
       </View>
       <View style={styles.scrollAreaColumnFiller}></View>
       <View style={styles.group4}>
-        <View style={styles.rect3Filler}></View>
         <View style={styles.rect3}>
           <View style={styles.group6}>
             <View style={styles.button3Filler}></View>

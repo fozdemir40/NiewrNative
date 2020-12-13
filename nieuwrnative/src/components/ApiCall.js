@@ -7,11 +7,6 @@ import {
   ScrollView,
   TouchableOpacity
 } from "react-native";
-import Svg, { Ellipse } from "react-native-svg";
-import EntypoIcon from "react-native-vector-icons/Entypo";
-import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
-import FeatherIcon from "react-native-vector-icons/Feather";
-import { TapGestureHandler } from "react-native-gesture-handler";
 
 export default class ApiCall extends Component{
     constructor(props){
@@ -76,7 +71,12 @@ export default class ApiCall extends Component{
       if (dataReturned) {
         articlesList = this.state.articles[0].map((item, i) =>
               <TouchableOpacity
-                      onPress={() => this.props.data.navigation.navigate("DetailPage", {itemId: i})}
+                      onPress={() => this.props.data.navigation.navigate("DetailPage", {
+                        itemId: i,
+                        imageUrl: item.urlToImage,
+                        titleArticle: item.title,
+                        contentArticle: item.content
+                      })}
                       style={styles.button}
                       key={i}
                     >
@@ -87,7 +87,7 @@ export default class ApiCall extends Component{
                       
                       <View style={styles.articleTextContainer}>
                         <Text style={styles.articleText}>{item.title}</Text>
-                        <Text>Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum </Text>
+                        <Text>{item.description}</Text>
                       </View>
                     </View>
             </TouchableOpacity>)

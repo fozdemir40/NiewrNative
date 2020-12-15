@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity} from "react-native";
 import Svg, { Ellipse } from "react-native-svg";
 
 function RegionSelect(props) {
@@ -53,8 +53,13 @@ function RegionSelect(props) {
       </View>
       <View style={styles.groupColumnFiller}></View>
       <View style={styles.rect1}>
+      <TouchableOpacity
+        onPress={()=> props.navigation.navigate('NewsHome')}
+        style={styles.button}
+      >
         <View style={styles.startHere1Filler}></View>
         <Text style={styles.startHere1}>Start here</Text>
+      </TouchableOpacity>  
       </View>
     </View>
   );
@@ -154,6 +159,11 @@ const styles = StyleSheet.create({
   },
   startHere1Filler: {
     flex: 1,
+    flexDirection: "row"
+  },
+  button: {
+    backgroundColor: "rgba(202,151,24,1)",
+    height: 58,
     flexDirection: "row"
   },
   startHere1: {

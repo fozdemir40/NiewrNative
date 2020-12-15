@@ -13,13 +13,13 @@ import RegionSelect from "./src/screens/RegionSelect";
 import OwnRegion from "./src/screens/OwnRegion";
 
 const DrawerNavigation = createDrawerNavigator({
-  DetailPage: DetailPage,
-  NewsHome: NewsHome,
-  SettingPage: SettingPage,
   StartPage: StartPage,
-  TopicPage: TopicPage,
+  NewsHome: NewsHome,
   RegionSelect: RegionSelect,
-    OwnRegion: OwnRegion
+  DetailPage: DetailPage,
+  SettingPage: SettingPage,
+  TopicPage: TopicPage,
+  OwnRegion: OwnRegion
 });
 
 const StackNavigation = createStackNavigator(
@@ -27,13 +27,13 @@ const StackNavigation = createStackNavigator(
     DrawerNavigation: {
       screen: DrawerNavigation
     },
-    DetailPage: DetailPage,
-    NewsHome: NewsHome,
-    SettingPage: SettingPage,
     StartPage: StartPage,
-    TopicPage: TopicPage,
+    NewsHome: NewsHome,
     RegionSelect: RegionSelect,
-      OwnRegion: OwnRegion
+    DetailPage: DetailPage,
+    SettingPage: SettingPage,
+    TopicPage: TopicPage,
+    OwnRegion: OwnRegion
   },
   {
     headerMode: "none"

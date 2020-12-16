@@ -43,6 +43,7 @@
       <e p="node_modules\@egjs\hammerjs" t="IncludeRecursive" />
       <e p="node_modules\@expo\vector-icons" t="IncludeRecursive" />
       <e p="node_modules\@jest\types" t="IncludeRecursive" />
+      <e p="node_modules\@react-native-async-storage\async-storage" t="IncludeRecursive" />
       <e p="node_modules\@types" t="IncludeRecursive">
         <e p="istanbul-lib-coverage" t="IncludeRecursive" />
         <e p="istanbul-lib-report" t="IncludeRecursive" />
@@ -54,6 +55,7 @@
       <e p="node_modules\babel-plugin-module-resolver" t="IncludeRecursive" />
       <e p="node_modules\babel-preset-expo" t="IncludeRecursive" />
       <e p="node_modules\badgin" t="IncludeRecursive" />
+      <e p="node_modules\chalk" t="IncludeRecursive" />
       <e p="node_modules\compare-versions" t="IncludeRecursive" />
       <e p="node_modules\css-select" t="IncludeRecursive" />
       <e p="node_modules\css-what" t="IncludeRecursive" />
@@ -70,6 +72,7 @@
       <e p="node_modules\expo-permissions" t="IncludeRecursive" />
       <e p="node_modules\expo-splash-screen" t="IncludeRecursive" />
       <e p="node_modules\expo-sqlite" t="IncludeRecursive" />
+      <e p="node_modules\hoist-non-react-statics" t="IncludeRecursive" />
       <e p="node_modules\lodash" t="IncludeRecursive" />
       <e p="node_modules\nullthrows" t="IncludeRecursive" />
       <e p="node_modules\pretty-format" t="IncludeRecursive" />

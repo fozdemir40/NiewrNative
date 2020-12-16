@@ -1,46 +1,60 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Text, TouchableOpacity, Switch } from "react-native";
 import Svg, { Ellipse } from "react-native-svg";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-function SettingPage(props) {
+class SettingPage extends React.Component{
+  constructor(props) {
+    super()
+    this.state = {
+      region: "onzin"
+    };
+    this.loadRegion();
+  }
+  async loadRegion(){
+    const token = await AsyncStorage.getItem('@region');
+    this.setState({ region: token });
+}
+render() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.preferences}>Preferences</Text>
-      <View style={styles.groupStack}>
-        <View style={styles.group}>
-          <View style={styles.buttonRow}>
-            <TouchableOpacity style={styles.button}></TouchableOpacity>
-            <TouchableOpacity style={styles.button2}></TouchableOpacity>
+      <View style={styles.container}>
+        <Text style={styles.preferences}>Preferences</Text>
+        <View style={styles.groupStack}>
+          <View style={styles.group}>
+            <View style={styles.buttonRow}>
+              <TouchableOpacity style={styles.button}></TouchableOpacity>
+              <TouchableOpacity style={styles.button2}></TouchableOpacity>
+            </View>
+            <TouchableOpacity style={styles.button3}></TouchableOpacity>
           </View>
-          <TouchableOpacity style={styles.button3}></TouchableOpacity>
+          <Text style={styles.regio}>Regio - Provincie - {"\n"}Landelijk</Text>
         </View>
-        <Text style={styles.regio}>Regio - Provincie - {"\n"}Landelijk</Text>
+        <Text style={styles.afstand}>Afstand:</Text>
+        <Text style={styles.darkMode}>Dark mode:</Text>
+        <Switch
+            value={false}
+            thumbColor="rgba(156,112,3,1)"
+            trackColor={{ true: "rgba(194,95,23,1)", false: "rgba(172,153,95,1)" }}
+            disabled={false}
+            style={styles.switch}
+        ></Switch>
+        <Text style={styles.kleur}>Kleur:</Text>
+        <Svg viewBox="0 0 240 240" style={styles.ellipse}>
+          <Ellipse
+              strokeWidth={24}
+              fill="rgba(234,205,131,1)"
+              cx={120}
+              cy={120}
+              rx={108}
+              ry={108}
+              stroke="rgba(0,0,0,1)"
+          ></Ellipse>
+        </Svg>
+        <Text style={styles.regio2}>Regio:</Text>
+        <Text style={styles.rotterdam}>test: {this.state.region}</Text>
       </View>
-      <Text style={styles.afstand}>Afstand:</Text>
-      <Text style={styles.darkMode}>Dark mode:</Text>
-      <Switch
-        value={false}
-        thumbColor="rgba(156,112,3,1)"
-        trackColor={{ true: "rgba(194,95,23,1)", false: "rgba(172,153,95,1)" }}
-        disabled={false}
-        style={styles.switch}
-      ></Switch>
-      <Text style={styles.kleur}>Kleur:</Text>
-      <Svg viewBox="0 0 240 240" style={styles.ellipse}>
-        <Ellipse
-          strokeWidth={24}
-          fill="rgba(234,205,131,1)"
-          cx={120}
-          cy={120}
-          rx={108}
-          ry={108}
-          stroke="rgba(0,0,0,1)"
-        ></Ellipse>
-      </Svg>
-      <Text style={styles.regio2}>Regio:</Text>
-      <Text style={styles.rotterdam}>Rotterdam</Text>
-    </View>
   );
+}  
 }
 
 const styles = StyleSheet.create({

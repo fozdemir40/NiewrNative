@@ -77,7 +77,15 @@ function DetailPage({navigation}) {
           </View>
         </ScrollView>
       </View>
-      <Text style={styles.regio}>Regio</Text>
+      <View style={styles.regioRow}>
+        <Text style={styles.regio}>Regio</Text>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('NewsHome')}
+          style={styles.button4}
+        >
+          <Text style={styles.back1}>Back</Text>
+        </TouchableOpacity>
+      </View>
     </View>
     <View style={styles.scrollAreaColumnFiller}></View>
     <View style={styles.group4}>
@@ -113,6 +121,20 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "rgba(202,151,24,1)"
+  },
+  back1: {
+    fontFamily: "roboto-700",
+    color: "rgba(255,255,255,1)",
+    fontSize: 20,
+    marginTop: 7,
+    marginLeft: 28
+  },
+  regioRow: {
+    height: 69,
+    flexDirection: "row",
+    marginTop: -667,
+    marginLeft: 39,
+    marginRight: 25
   },
   scrollArea: {
     height: 581,
@@ -233,9 +255,7 @@ const styles = StyleSheet.create({
   regio: {
     fontFamily: "roboto-700",
     color: "rgba(170,105,8,1)",
-    fontSize: 50,
-    marginTop: -667,
-    marginLeft: 39
+    fontSize: 50
   },
   scrollAreaColumn: {
     marginTop: 90

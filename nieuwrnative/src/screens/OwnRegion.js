@@ -60,6 +60,12 @@ function OwnRegion(props) {
           </ScrollView>
         </View>
       </View>
+      <TouchableOpacity
+      onPress={() => props.navigation.navigate("NewsHome")}
+      style={styles.button20}
+    >
+      <Text style={styles.back1}>Back</Text>
+    </TouchableOpacity>
     </View>
   );
 }
@@ -74,20 +80,16 @@ const styles = StyleSheet.create({
     color: "rgba(197,142,42,1)",
     fontSize: 60,
     width: 322,
-    height: 239
-  },
-  materialSearchBar: {
-    height: 56,
-    width: 369,
-    marginTop: 26,
-    marginLeft: 9
+    height: 239,
+    marginTop: 143,
+    marginLeft: 22
   },
   scrollArea1: {
     width: 356,
     height: 357,
     backgroundColor: "rgba(234,205,131,1)",
-    marginTop: 26,
-    marginLeft: 15
+    marginTop: 108,
+    marginLeft: 37
   },
   scrollArea1_contentContainerStyle: {
     height: 357,
@@ -454,36 +456,52 @@ const styles = StyleSheet.create({
     marginTop: 11,
     alignSelf: "center"
   },
-  selectYourLocationColumn: {
-    width: 378,
-    marginTop: 37,
-    marginLeft: 14
+  group1: {
+    width: 310,
+    height: 34,
+    marginTop: -400,
+    marginLeft: 37
   },
-  selectYourLocationColumnFiller: {
-    flex: 1
+  selectRegion1: {
+    top: 0,
+    left: 9,
+    position: "absolute",
+    fontFamily: "alfa-slab-one-regular",
+    color: "rgba(197,142,42,1)",
+    fontSize: 60,
+    width: 322,
+    height: 153
   },
-  rect1: {
+  changeableInPref1: {
+    top: 119,
+    left: 0,
+    position: "absolute",
+    fontFamily: "roboto-700",
+    color: "rgba(210,164,51,1)",
+    fontSize: 15,
+    width: 310,
+    height: 34
+  },
+  selectRegion1Stack: {
+    width: 331,
+    height: 153,
+    marginTop: -177,
+    marginLeft: -9
+  },
+  button20: {
+    width: 100,
+    height: 36,
     backgroundColor: "rgba(202,151,24,1)",
-    height: 58
+    borderRadius: 24,
+    marginTop: -800,
+    marginLeft: 22
   },
-  button2: {
-    width: 98,
-    height: 29,
-    backgroundColor: "rgba(202,151,24,1)",
-    flexDirection: "row",
-    marginTop: 15,
-    marginLeft: 294
-  },
-  submit1Filler: {
-    flex: 1,
-    flexDirection: "row"
-  },
-  submit1: {
+  back1: {
     fontFamily: "roboto-700",
     color: "rgba(255,255,255,1)",
     fontSize: 20,
-    marginRight: 2,
-    marginTop: 2
+    marginTop: 7,
+    marginLeft: 28
   }
 });
 

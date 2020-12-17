@@ -61,7 +61,7 @@ function OwnRegion(props) {
         </View>
       </View>
       <TouchableOpacity
-      onPress={() => props.navigation.navigate("NewsHome")}
+      onPress={() => props.navigation.navigate("SettingPage")}
       style={styles.button20}
     >
       <Text style={styles.back1}>Back</Text>

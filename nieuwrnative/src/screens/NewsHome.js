@@ -145,7 +145,7 @@ function NewsHome(props) {
                   </ScrollView>
                 </View>
                 <TouchableOpacity style={styles.button19} onPress={() => props.navigation.navigate("TopicPage")}>
-                  <View style={styles.ellipse46Stack}>
+                  <View style={styles.ellipse46Stack}></View>
                     <Svg viewBox="0 0 70 70" style={styles.ellipse46}>
                       <Ellipse
                         stroke="rgba(230, 230, 230,1)"
@@ -184,7 +184,6 @@ function NewsHome(props) {
                         d="M40 128h176M128 40v176"
                       />
                     </Svg>
-                  </View>
                 </TouchableOpacity>
               </View>
             </View>
@@ -481,11 +480,9 @@ const styles = StyleSheet.create({
     top: 3
   },
   icon4: {
-    top: 14,
-    left: 15,
     position: "absolute",
     color: "rgba(0,0,0,1)",
-    fontSize: 40
+    padding: 10
   },
   ellipse46Stack: {
     width: 70,

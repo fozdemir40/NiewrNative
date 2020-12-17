@@ -443,10 +443,11 @@ const styles = StyleSheet.create({
   },
   icon2: {
     top: 0,
-    left: 0,
+    left: -110,
     position: "absolute",
     color: "rgba(0,0,0,1)",
-    fontSize: 40
+    fontSize: 40,
+    padding: 30
   },
   rect2Stack: {
     width: 239,

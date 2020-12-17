@@ -7,9 +7,7 @@ import {
   Text,
   TouchableOpacity
 } from "react-native";
-import FeatherIcon from "react-native-vector-icons/Feather";
-import EntypoIcon from "react-native-vector-icons/Entypo";
-import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
+import Svg, { Ellipse, Path, Circle, Rect } from "react-native-svg";
 
 function DetailPage({navigation}) {
   const itemId = navigation.getParam('itemId')
@@ -50,10 +48,51 @@ function DetailPage({navigation}) {
                 <Text style={styles.loremIpsum}>
                   {article.content}
                 </Text>
-                <FeatherIcon
-                  name="share-2"
-                  style={styles.icon1}
-                ></FeatherIcon>
+                <Svg
+                xmlns="http://www.w3.org/2000/svg"
+                style={styles.icon1}
+                viewBox="0 0 256 256"
+              >
+                <Path fill="none" d="M0 0h256v256H0z" />
+                <Circle
+                  cx={64}
+                  cy={128}
+                  r={32}
+                  fill="none"
+                  stroke="#000"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={16}
+                />
+                <Circle
+                  cx={176}
+                  cy={200}
+                  r={32}
+                  fill="none"
+                  stroke="#000"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={16}
+                />
+                <Circle
+                  cx={176}
+                  cy={56}
+                  r={32}
+                  fill="none"
+                  stroke="#000"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={16}
+                />
+                <Path
+                  fill="none"
+                  stroke="#000"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={16}
+                  d="M149.084 73.303l-58.171 37.396M90.913 145.301l58.171 37.396"
+                />
+              </Svg>
               </View>
             </View>
             <View style={styles.group7}>
@@ -67,10 +106,31 @@ function DetailPage({navigation}) {
                       Bron: Regiogroei A
                     </Text>
                   </View>
-                  <EntypoIcon
-                    name="location-pin"
-                    style={styles.icon2}
-                  ></EntypoIcon>
+                  <Svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 256 256"
+                  style={styles.icon2}
+                >
+                  <Path fill="none" d="M0 0h256v256H0z" />
+                  <Circle
+                    cx={128}
+                    cy={104}
+                    r={32}
+                    fill="none"
+                    stroke="#000"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={16}
+                  />
+                  <Path
+                    d="M208 104c0 72-80 128-80 128s-80-56-80-128a80 80 0 01160 0z"
+                    fill="none"
+                    stroke="#000"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={16}
+                  />
+                </Svg>
                 </View>
               </View>
             </View>
@@ -91,26 +151,100 @@ function DetailPage({navigation}) {
     <View style={styles.group4}>
       <View style={styles.rect3Filler}></View>
       <View style={styles.rect3}>
-        <View style={styles.group6}>
-          <View style={styles.button3Filler}></View>
-          <TouchableOpacity style={styles.button3}>
-            <FontAwesomeIcon
-              name="map-o"
-              style={styles.icon5}
-            ></FontAwesomeIcon>
+      <View style={styles.button23Stack}>
+          <TouchableOpacity style={styles.button23}>
+          <Svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 256 256"
+          style={styles.icon5}
+        >
+          <Path fill="none" d="M0 0h256v256H0z" />
+          <Circle
+            cx={128}
+            cy={128}
+            r={88}
+            fill="none"
+            stroke="#000"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={16}
+          />
+          <Path
+            fill="none"
+            stroke="#000"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={16}
+            d="M128 20v40M20 128h40M128 236v-40M236 128h-40"
+          />
+          <Circle
+            cx={128}
+            cy={128}
+            r={32}
+            fill="none"
+            stroke="#000"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={16}
+          />
+        </Svg>
           </TouchableOpacity>
+          <View style={styles.group12}>
+            <View style={styles.group13}>
+              <View style={styles.button25Filler}></View>
+              <TouchableOpacity style={styles.button25}>
+                  <Svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 256 256"
+                  style={styles.icon7}
+                >
+                    <Path fill="none" d="M0 0h256v256H0z" />
+                    <Rect
+                      x={40}
+                      y={40}
+                      width={176}
+                      height={176}
+                      rx={8}
+                      strokeWidth={16}
+                      stroke="#000"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      fill="none"
+                    />
+                    <Path
+                      fill="none"
+                      stroke="#000"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={16}
+                      d="M176 24v32M80 24v32M40 88h176M92 127.997h28l-16 20a16 16 0 11-11.307 27.32M144 139.997l16-12v52"
+                    />
+                  </Svg>
+              </TouchableOpacity>
+            </View>
+            <View style={styles.group13Filler}></View>
+            <TouchableOpacity
+              onPress={() => props.navigation.navigate("SettingPage")}
+              style={styles.button24}
+            >
+              <Svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 256 256"
+              style={styles.icon6}
+            >
+                <Path fill="none" d="M0 0h256v256H0z" />
+                <Path
+                  d="M184.991 37.068L143.03 79.029l5.657 28.285 28.285 5.657 41.961-41.962.005-.002a64.025 64.025 0 01-89.882 81.034l.002-.003-56.086 64.933a24 24 0 01-33.942-33.942l64.932-56.085h-.002a64.025 64.025 0 0181.034-89.88z"
+                  fill="none"
+                  stroke="#000"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={16}
+                />
+              </Svg>
+            </TouchableOpacity>
+          </View>
         </View>
-        <View style={styles.group6Filler}>
-          <TouchableOpacity style={styles.button1}>
-            <FontAwesomeIcon
-              name="calendar"
-              style={styles.icon3}
-            ></FontAwesomeIcon>
-          </TouchableOpacity>
-        </View>
-        <TouchableOpacity style={styles.button2}>
-          <FeatherIcon name="settings" style={styles.icon4}></FeatherIcon>
-        </TouchableOpacity>
       </View>
     </View>
   </View>
@@ -121,6 +255,72 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "rgba(202,151,24,1)"
+  },
+  button23Stack: {
+    width: 331,
+    flex: 1,
+    marginBottom: 29,
+    marginTop: 16
+  },
+  button25: {
+    backgroundColor: "rgba(156,112,3,1)",
+    justifyContent: "center",
+    alignItems: "center",
+    width: 46,
+    borderRadius: 15
+  },
+  button24: {
+    width: 50,
+    backgroundColor: "rgba(156,112,3,1)",
+    justifyContent: "center",
+    alignItems: "center",
+    height: 55,
+    borderRadius: 15
+  },
+  icon5: {
+    color: "rgba(0,0,0,1)",
+    fontSize: 40
+  },
+  icon6: {
+    color: "rgba(0,0,0,1)",
+    fontSize: 40
+  },
+  group12: {
+    top: 0,
+    left: 0,
+    width: 331,
+    height: 55,
+    position: "absolute",
+    flexDirection: "row"
+  },
+  group13: {
+    width: 134,
+    height: 55,
+    borderRadius: 15,
+    flexDirection: "row"
+  },
+  button25Filler: {
+    flex: 1,
+    flexDirection: "row"
+  },
+  group13Filler: {
+    flex: 1,
+    flexDirection: "row"
+  },
+  icon7: {
+    color: "rgba(0,0,0,0.1)",
+    fontSize: 40
+  },
+  button23: {
+    top: 0,
+    width: 50,
+    position: "absolute",
+    backgroundColor: "rgba(156,112,3,1)",
+    bottom: 0,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 15,
+    left: 182
   },
   back1: {
     fontFamily: "roboto-700",

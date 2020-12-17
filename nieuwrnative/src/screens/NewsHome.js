@@ -6,10 +6,7 @@ import {
   ScrollView,
   TouchableOpacity
 } from "react-native";
-import Svg, { Ellipse } from "react-native-svg";
-import EntypoIcon from "react-native-vector-icons/Entypo";
-import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
-import FeatherIcon from "react-native-vector-icons/Feather";
+import Svg, { Ellipse, Path, Circle, Rect } from "react-native-svg";
 import ApiCall from "../components/ApiCall";
 
 function NewsHome(props) {
@@ -171,7 +168,22 @@ function NewsHome(props) {
                         ry={33}
                       ></Ellipse>
                     </Svg>
-                    <EntypoIcon name="plus" style={styles.icon4}></EntypoIcon>
+                    <Svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 256 256"
+                    {...props}
+                    style={styles.icon4}
+                    >
+                      <Path fill="none" d="M0 0h256v256H0z" />
+                      <Path
+                        fill="none"
+                        stroke="#000"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={16}
+                        d="M40 128h176M128 40v176"
+                      />
+                    </Svg>
                   </View>
                 </TouchableOpacity>
               </View>
@@ -195,19 +207,75 @@ function NewsHome(props) {
         <View style={styles.rect11}>
           <View style={styles.button23Stack}>
             <TouchableOpacity style={styles.button23}>
-              <FontAwesomeIcon
-                name="calendar"
-                style={styles.icon5}
-              ></FontAwesomeIcon>
+            <Svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 256 256"
+            {...props}
+            style={styles.icon5}
+          >
+            <Path fill="none" d="M0 0h256v256H0z" />
+            <Circle
+              cx={128}
+              cy={128}
+              r={88}
+              fill="none"
+              stroke="#000"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={16}
+            />
+            <Path
+              fill="none"
+              stroke="#000"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={16}
+              d="M128 20v40M20 128h40M128 236v-40M236 128h-40"
+            />
+            <Circle
+              cx={128}
+              cy={128}
+              r={32}
+              fill="none"
+              stroke="#000"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={16}
+            />
+          </Svg>
             </TouchableOpacity>
             <View style={styles.group12}>
               <View style={styles.group13}>
                 <View style={styles.button25Filler}></View>
                 <TouchableOpacity style={styles.button25}>
-                  <FontAwesomeIcon
-                    name="map-o"
+                    <Svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 256 256"
+                    {...props}
                     style={styles.icon7}
-                  ></FontAwesomeIcon>
+                  >
+                      <Path fill="none" d="M0 0h256v256H0z" />
+                      <Rect
+                        x={40}
+                        y={40}
+                        width={176}
+                        height={176}
+                        rx={8}
+                        strokeWidth={16}
+                        stroke="#000"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        fill="none"
+                      />
+                      <Path
+                        fill="none"
+                        stroke="#000"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={16}
+                        d="M176 24v32M80 24v32M40 88h176M92 127.997h28l-16 20a16 16 0 11-11.307 27.32M144 139.997l16-12v52"
+                      />
+                    </Svg>
                 </TouchableOpacity>
               </View>
               <View style={styles.group13Filler}></View>
@@ -215,7 +283,22 @@ function NewsHome(props) {
                 onPress={() => props.navigation.navigate("SettingPage")}
                 style={styles.button24}
               >
-                <FeatherIcon name="settings" style={styles.icon6}></FeatherIcon>
+                <Svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 256 256"
+                {...props}
+                style={styles.icon6}
+              >
+                  <Path fill="none" d="M0 0h256v256H0z" />
+                  <Path
+                    d="M184.991 37.068L143.03 79.029l5.657 28.285 28.285 5.657 41.961-41.962.005-.002a64.025 64.025 0 01-89.882 81.034l.002-.003-56.086 64.933a24 24 0 01-33.942-33.942l64.932-56.085h-.002a64.025 64.025 0 0181.034-89.88z"
+                    fill="none"
+                    stroke="#000"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={16}
+                  />
+                </Svg>
               </TouchableOpacity>
             </View>
           </View>
@@ -542,7 +625,7 @@ const styles = StyleSheet.create({
     borderRadius: 15
   },
   icon7: {
-    color: "rgba(0,0,0,1)",
+    color: "rgba(0,0,0,0.1)",
     fontSize: 40
   },
   group13Filler: {

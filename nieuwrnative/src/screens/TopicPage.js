@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import {
   StyleSheet,
   View,
-  Text,
   TouchableOpacity,
+  Text,
   ScrollView
 } from "react-native";
 import CupertinoSearchBarBasic from "../components/CupertinoSearchBarBasic";
@@ -11,9 +11,16 @@ import CupertinoSearchBarBasic from "../components/CupertinoSearchBarBasic";
 function TopicPage(props) {
   return (
     <View style={styles.container}>
-      <View style={styles.preferences1Row}>
-        <Text style={styles.preferences1}>Choose your topic trends.</Text>
-        <Text style={styles.preferences2}>Choose your topic trends.</Text>
+      <View style={styles.button17ColumnRow}>
+        <View style={styles.button17Column}>
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate("NewsHome")}
+            style={styles.button17}
+          >
+            <Text style={styles.back1}>Back</Text>
+          </TouchableOpacity>
+          <Text style={styles.preferences1}>Choose your topic trends.</Text>
+        </View>
       </View>
       <Text style={styles.reccomendedTrends}>Reccomended trends:</Text>
       <View style={styles.buttonRow}>
@@ -81,12 +88,30 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "rgba(234,205,131,1)"
   },
+  button17: {
+    width: 100,
+    height: 36,
+    backgroundColor: "rgba(202,151,24,1)",
+    borderRadius: 24
+  },
+  back1: {
+    fontFamily: "roboto-700",
+    color: "rgba(255,255,255,1)",
+    fontSize: 20,
+    marginTop: 7,
+    marginLeft: 28
+  },
   preferences1: {
     fontFamily: "alfa-slab-one-regular",
     color: "rgba(197,142,42,1)",
     fontSize: 50,
     width: 286,
-    height: 199
+    height: 199,
+    marginTop: 59
+  },
+  button17Column: {
+    width: 286,
+    marginTop: 15
   },
   preferences2: {
     fontFamily: "alfa-slab-one-regular",
@@ -96,8 +121,8 @@ const styles = StyleSheet.create({
     height: 199,
     marginLeft: 138
   },
-  preferences1Row: {
-    height: 199,
+  button17ColumnRow: {
+    height: 309,
     flexDirection: "row",
     marginTop: 53,
     marginLeft: 30,
@@ -109,7 +134,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     width: 177,
     height: 20,
-    marginTop: 22,
+    marginTop: 8,
     marginLeft: 30
   },
   button: {
@@ -144,7 +169,7 @@ const styles = StyleSheet.create({
   buttonRow: {
     height: 39,
     flexDirection: "row",
-    marginTop: 19,
+    marginTop: 11,
     marginLeft: 30,
     marginRight: 127
   },
@@ -167,8 +192,8 @@ const styles = StyleSheet.create({
     width: 356,
     height: 277,
     backgroundColor: "rgba(234,205,131,1)",
-    marginTop: 24,
-    marginLeft: 29
+    marginTop: 11,
+    marginLeft: 30
   },
   scrollArea_contentContainerStyle: {
     height: 277,

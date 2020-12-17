@@ -147,7 +147,7 @@ function NewsHome(props) {
                     </Svg>
                   </ScrollView>
                 </View>
-                <TouchableOpacity style={styles.button19}>
+                <TouchableOpacity style={styles.button19} onPress={() => props.navigation.navigate("TopicPage")}>
                   <View style={styles.ellipse46Stack}>
                     <Svg viewBox="0 0 70 70" style={styles.ellipse46}>
                       <Ellipse

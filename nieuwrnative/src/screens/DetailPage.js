@@ -386,7 +386,7 @@ const styles = StyleSheet.create({
     position: "absolute"
   },
   loremIpsum: {
-    top: 230,
+    top: 260,
     left: 0,
     position: "absolute",
     fontFamily: "roboto-regular",
@@ -425,10 +425,7 @@ const styles = StyleSheet.create({
     width: 239,
     height: 43,
     position: "absolute",
-    backgroundColor: "rgba(255,255,255,1)",
-    borderWidth: 2,
-    borderColor: "#000000",
-    borderRadius: 7
+    backgroundColor: "rgba(255,255,255,1)"
   },
   rotterdam: {
     fontFamily: "roboto-700",
@@ -442,12 +439,13 @@ const styles = StyleSheet.create({
     marginLeft: 34
   },
   icon2: {
+    height: 30,
     top: 0,
-    left: -110,
+    left: 0,
     position: "absolute",
     color: "rgba(0,0,0,1)",
-    fontSize: 40,
-    padding: 30
+    fontSize: 20,
+    padding: 5
   },
   rect2Stack: {
     width: 239,

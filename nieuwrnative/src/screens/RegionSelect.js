@@ -155,7 +155,8 @@ const styles = StyleSheet.create({
   },
   group2: {
     width: 475,
-    height: 475
+    height: 475,
+    marginTop: 40
   },
   land_circle: {
     top: 0,

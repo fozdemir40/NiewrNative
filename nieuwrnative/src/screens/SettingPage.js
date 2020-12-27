@@ -23,27 +23,28 @@ class SettingPage extends React.Component{
       region: "onzin"
     };
     this.loadRegion();
-    this.fontsLoaded = []
   }
 
   checkLoaded(){
-    
+    let [fontsLoaded] = useFonts({
+      Roboto_400Regular,
+      Roboto_400Regular_Italic,
+      Roboto_700Bold,
+      Roboto_700Bold_Italic,
+      AlfaSlabOne_400Regular 
+    });
+
+    return fontsLoaded
   }
 
-  fontsLoaded = useFonts({
-    Roboto_400Regular,
-    Roboto_400Regular_Italic,
-    Roboto_700Bold,
-    Roboto_700Bold_Italic,
-    AlfaSlabOne_400Regular 
-  });
+  
 
   async loadRegion(){
     const token = await AsyncStorage.getItem('@region');
     this.setState({ region: token });
 }
 render() {
-  if (!fontsLoaded) {
+  if (!this.checkLoaded) {
     return <Text>Loading..</Text>
   } else {
   const {navigation} = this.props

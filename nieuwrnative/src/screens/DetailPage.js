@@ -202,79 +202,80 @@ function DetailPage({navigation}) {
       <View style={styles.rect3Filler}></View>
       <View style={styles.rect3}>
       <View style={styles.button23Stack}>
-          <TouchableOpacity style={styles.button23}>
-          <Svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 256 256"
-          style={styles.icon5}
-        >
-          <Path fill="none" d="M0 0h256v256H0z" />
-          <Circle
-            cx={128}
-            cy={128}
-            r={88}
-            fill="none"
-            stroke="#000"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={16}
-          />
-          <Path
-            fill="none"
-            stroke="#000"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={16}
-            d="M128 20v40M20 128h40M128 236v-40M236 128h-40"
-          />
-          <Circle
-            cx={128}
-            cy={128}
-            r={32}
-            fill="none"
-            stroke="#000"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={16}
-          />
-        </Svg>
-          </TouchableOpacity>
+      <TouchableOpacity style={styles.button23}>
+      <Svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 256 256"
+              style={styles.icon7}
+            >
+                <Path fill="none" d="M0 0h256v256H0z" />
+                <Rect
+                  x={40}
+                  y={40}
+                  width={176}
+                  height={176}
+                  rx={8}
+                  strokeWidth={16}
+                  stroke="#000"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  fill="none"
+                />
+                <Path
+                  fill="none"
+                  stroke="#000"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={16}
+                  d="M176 24v32M80 24v32M40 88h176M92 127.997h28l-16 20a16 16 0 11-11.307 27.32M144 139.997l16-12v52"
+                />
+              </Svg>
+      </TouchableOpacity>
           <View style={styles.group12}>
             <View style={styles.group13}>
               <View style={styles.button25Filler}></View>
-              <TouchableOpacity style={styles.button25}>
-                  <Svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 256 256"
-                  style={styles.icon7}
-                >
-                    <Path fill="none" d="M0 0h256v256H0z" />
-                    <Rect
-                      x={40}
-                      y={40}
-                      width={176}
-                      height={176}
-                      rx={8}
-                      strokeWidth={16}
-                      stroke="#000"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      fill="none"
-                    />
-                    <Path
-                      fill="none"
-                      stroke="#000"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={16}
-                      d="M176 24v32M80 24v32M40 88h176M92 127.997h28l-16 20a16 16 0 11-11.307 27.32M144 139.997l16-12v52"
-                    />
-                  </Svg>
-              </TouchableOpacity>
+              <TouchableOpacity style={styles.button25} onPress={() => navigation.navigate("RegionSelect")}>
+                <Svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 256 256"
+            style={styles.icon5}
+          >
+            <Path fill="none" d="M0 0h256v256H0z" />
+            <Circle
+              cx={128}
+              cy={128}
+              r={88}
+              fill="none"
+              stroke="#000"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={16}
+            />
+            <Path
+              fill="none"
+              stroke="#000"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={16}
+              d="M128 20v40M20 128h40M128 236v-40M236 128h-40"
+            />
+            <Circle
+              cx={128}
+              cy={128}
+              r={32}
+              fill="none"
+              stroke="#000"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={16}
+            />
+          </Svg>
+                    
+                </TouchableOpacity>
             </View>
             <View style={styles.group13Filler}></View>
             <TouchableOpacity
-              onPress={() => props.navigation.navigate("SettingPage")}
+              onPress={() => navigation.navigate("SettingPage")}
               style={styles.button24}
             >
               <Svg

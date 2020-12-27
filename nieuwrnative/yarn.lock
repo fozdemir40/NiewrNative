@@ -987,6 +987,16 @@
   dependencies:
     "@types/hammerjs" "^2.0.36"
 
+"@expo-google-fonts/alfa-slab-one@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@expo-google-fonts/alfa-slab-one/-/alfa-slab-one-0.1.0.tgz#9759e25d3795c27c67a22c68e044c09d1a720013"
+  integrity sha512-3lr8XZd/PIgMkS/B+GwWQjEjyFyWjGCx237raWWDe317IvPvPXaYWAMnrkFFIT6b9zav0MkAZ+WtWMinZl1rvw==
+
+"@expo-google-fonts/roboto@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@expo-google-fonts/roboto/-/roboto-0.1.0.tgz#2897dc09db4ceb9f5ba337103090e1d70236e811"
+  integrity sha512-q+68xWZpLIS/iPC5jwoakEskyTVgIC1jfpNzWFMnUnBoZsWRq1rlpnleR3MjKDeN1Vt0NcvUI/aaZoCyIXhisw==
+
 "@expo/configure-splash-screen@0.2.0":
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@expo/configure-splash-screen/-/configure-splash-screen-0.2.0.tgz#84f9f71363259f16fd0073636a198c750a3cdd7c"

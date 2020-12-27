@@ -8,8 +8,29 @@ import {
   TouchableOpacity
 } from "react-native";
 import Svg, { Ellipse, Path, Circle, Rect } from "react-native-svg";
+import {
+  useFonts,
+  Roboto_400Regular,
+  Roboto_400Regular_Italic,
+  Roboto_700Bold,
+  Roboto_700Bold_Italic,
+} from '@expo-google-fonts/roboto'
+import { 
+  AlfaSlabOne_400Regular 
+} from '@expo-google-fonts/alfa-slab-one'
+
 
 function DetailPage({navigation}) {
+  let [fontsLoaded] = useFonts({
+    Roboto_400Regular,
+    Roboto_400Regular_Italic,
+    Roboto_700Bold,
+    Roboto_700Bold_Italic,
+    AlfaSlabOne_400Regular 
+  });
+  if (!fontsLoaded) {
+    return <Text>Loading..</Text>
+  } else {
   const itemId = navigation.getParam('itemId')
   const imageUrlArticle = navigation.getParam('imageUrl')
   const titleArticle = navigation.getParam('titleArticle')
@@ -40,12 +61,26 @@ function DetailPage({navigation}) {
                     style={styles.image}
                   ></Image>
                   <View style={styles.group2}>
-                    <Text style={styles.e2}>
+                    <Text style={{
+                      
+                      color: "#121212",
+                      fontSize: 14,
+                      marginTop: 21,
+                      alignSelf: "center",
+                      fontFamily: "Roboto_700Bold",}}>
                       {article.title}
                     </Text>
                   </View>
                 </View>
-                <Text style={styles.loremIpsum}>
+                <Text style={{
+                  top: 260,
+                  left: 0,
+                  position: "absolute",
+                  color: "#121212",
+                  textAlign: "left",
+                  width: 256,
+                  height: 270,
+                  fontFamily: "Roboto_400Regular",}}>
                   {article.content}
                 </Text>
                 <Svg
@@ -99,10 +134,17 @@ function DetailPage({navigation}) {
               <View style={styles.group3}>
                 <View style={styles.rect2Stack}>
                   <View style={styles.rect2}>
-                    <Text style={styles.rotterdam}>
+                    <Text style={{
+                      color: "#121212",
+                      marginTop: 5,
+                      marginLeft: 34,
+                      fontFamily: "Roboto_700Bold",}}>
                       Rotterdam: 36 minuten geleden
                     </Text>
-                    <Text style={styles.bronRegiogroeiA}>
+                    <Text style={{
+                    color: "#121212",
+                    marginLeft: 34,
+                    fontFamily: "Roboto_400Regular_Italic",}}>
                       Bron: Regiogroei A
                     </Text>
                   </View>
@@ -138,12 +180,20 @@ function DetailPage({navigation}) {
         </ScrollView>
       </View>
       <View style={styles.regioRow}>
-        <Text style={styles.regio}>Regio</Text>
+        <Text style={{
+          color: "rgba(170,105,8,1)",
+          fontSize: 50,
+          fontFamily: "Roboto_700Bold",}}>Regio</Text>
         <TouchableOpacity
           onPress={() => navigation.navigate('NewsHome')}
           style={styles.button4}
         >
-          <Text style={styles.back1}>Back</Text>
+          <Text style={{
+          color: "rgba(255,255,255,1)",
+          fontSize: 20,
+          marginTop: 7,
+          marginLeft: 28,
+          fontFamily: "Roboto_700Bold",}}>Back</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -249,7 +299,7 @@ function DetailPage({navigation}) {
     </View>
   </View>
   );
-}
+}}
 
 const styles = StyleSheet.create({
   container: {

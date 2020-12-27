@@ -8,8 +8,28 @@ import {
 } from "react-native";
 import Svg, { Ellipse, Path, Circle, Rect } from "react-native-svg";
 import ApiCall from "../components/ApiCall";
+import {
+  useFonts,
+  Roboto_400Regular,
+  Roboto_400Regular_Italic,
+  Roboto_700Bold,
+  Roboto_700Bold_Italic,
+} from '@expo-google-fonts/roboto'
+import { 
+  AlfaSlabOne_400Regular 
+} from '@expo-google-fonts/alfa-slab-one'
 
 function NewsHome(props) {
+  let [fontsLoaded] = useFonts({
+    Roboto_400Regular,
+    Roboto_400Regular_Italic,
+    Roboto_700Bold,
+    Roboto_700Bold_Italic,
+    AlfaSlabOne_400Regular 
+  });
+  if (!fontsLoaded) {
+    return <Text>Loading..</Text>
+  } else {
   return (
     <View style={styles.container}>
       <View style={styles.rect10RowColumn}>
@@ -29,7 +49,13 @@ function NewsHome(props) {
                     ry={105}
                   ></Ellipse>
                 </Svg>
-                <Text style={styles.nieuwr}>Nieuwr.</Text>
+                <Text style={{top: 121,
+                  position: "absolute",
+                  color: "rgba(197,142,42,1)",
+                  fontSize: 60,
+                  bottom: 16,
+                  left: 49,
+                  fontFamily: "Roboto_700Bold",}}>Nieuwr.</Text>
               </View>
             </View>
             <View style={styles.group10}></View>
@@ -305,7 +331,7 @@ function NewsHome(props) {
       </View>
     </View>
   );
-}
+}}
 
 const styles = StyleSheet.create({
   container: {

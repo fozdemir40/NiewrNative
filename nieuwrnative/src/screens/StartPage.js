@@ -1,8 +1,29 @@
-import React, { Component } from "react";
+import React, { Component, AppLoading } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import Svg, { Ellipse } from "react-native-svg";
+import {
+  useFonts,
+  Roboto_400Regular,
+  Roboto_400Regular_Italic,
+  Roboto_700Bold,
+  Roboto_700Bold_Italic,
+} from '@expo-google-fonts/roboto'
+import { 
+  AlfaSlabOne_400Regular 
+} from '@expo-google-fonts/alfa-slab-one'
+
 
 function StartPage(props) {
+  let [fontsLoaded] = useFonts({
+    Roboto_400Regular,
+    Roboto_400Regular_Italic,
+    Roboto_700Bold,
+    Roboto_700Bold_Italic,
+    AlfaSlabOne_400Regular 
+  });
+  if (!fontsLoaded) {
+    return <Text>Loading..</Text>
+  } else {
   return (
     <View style={styles.container}>
       <View style={styles.rectStack}>
@@ -30,8 +51,8 @@ function StartPage(props) {
                 ry={50}
               ></Ellipse>
             </Svg>
-            <Text style={styles.niewr}>Niewr.</Text>
-            <Text style={styles.itsAboutYou}>It&#39;s about you</Text>
+            <Text style={styles.niewr, { fontFamily: 'Roboto_700Bold' }}>Niewr.</Text>
+            <Text style={styles.itsAboutYou, { fontFamily: 'Roboto_700Bold' }}>It&#39;s about you</Text>
           </View>
           <View style={styles.ellipse2StackFiller}></View>
           <TouchableOpacity
@@ -39,7 +60,8 @@ function StartPage(props) {
             style={styles.button}
           >
             <View style={styles.startHereFiller}></View>
-            <Text style={styles.startHere}>Start here</Text>
+            <Text style={{ color: "rgba(255,255,255,1)", width: 130,
+            fontSize: 25, fontFamily: 'Roboto_700Bold' }}>Start here</Text>
           </TouchableOpacity>
         </View>
         <Svg viewBox="0 0 580.9 579.47" style={styles.ellipse}>
@@ -56,7 +78,7 @@ function StartPage(props) {
       </View>
     </View>
   );
-}
+}}
 
 const styles = StyleSheet.create({
   container: {
@@ -91,7 +113,6 @@ const styles = StyleSheet.create({
     top: 96,
     left: 22,
     position: "absolute",
-    fontFamily: "roboto-700",
     color: "rgba(202,151,24,1)",
     fontSize: 70,
     width: 368,
@@ -101,7 +122,6 @@ const styles = StyleSheet.create({
     top: 184,
     left: 22,
     position: "absolute",
-    fontFamily: "roboto-700",
     color: "rgba(202,151,24,1)",
     fontSize: 20,
     width: 320,
@@ -126,9 +146,8 @@ const styles = StyleSheet.create({
     flexDirection: "row"
   },
   startHere: {
-    fontFamily: "roboto-700",
     color: "rgba(255,255,255,1)",
-    fontSize: 20,
+    fontSize: 30,
     width: 139,
     alignSelf: "center"
   },

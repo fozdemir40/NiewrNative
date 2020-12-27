@@ -2,6 +2,19 @@ import React, { Component } from "react";
 import { StyleSheet, View, Text, TouchableOpacity, Switch } from "react-native";
 import Svg, { Ellipse } from "react-native-svg";
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {
+  useFonts,
+  Roboto_400Regular,
+  Roboto_400Regular_Italic,
+  Roboto_700Bold,
+  Roboto_700Bold_Italic,
+} from '@expo-google-fonts/roboto'
+import { 
+  AlfaSlabOne_400Regular 
+} from '@expo-google-fonts/alfa-slab-one'
+
+
+
 
 class SettingPage extends React.Component{
   constructor(props) {
@@ -10,16 +23,39 @@ class SettingPage extends React.Component{
       region: "onzin"
     };
     this.loadRegion();
+    this.fontsLoaded = []
   }
+
+  checkLoaded(){
+    
+  }
+
+  fontsLoaded = useFonts({
+    Roboto_400Regular,
+    Roboto_400Regular_Italic,
+    Roboto_700Bold,
+    Roboto_700Bold_Italic,
+    AlfaSlabOne_400Regular 
+  });
+
   async loadRegion(){
     const token = await AsyncStorage.getItem('@region');
     this.setState({ region: token });
 }
 render() {
+  if (!fontsLoaded) {
+    return <Text>Loading..</Text>
+  } else {
   const {navigation} = this.props
   return (
       <View style={styles.container}>
-      <Text style={styles.preferences}>Preferences</Text>
+      <Text style={{
+        fontFamily: "AlfaSlabOne_400Regular",
+        color: "rgba(197,142,42,1)",
+        fontSize: 50,
+        marginTop: 172,
+        marginLeft: 19
+      }}>Preferences</Text>
       <View style={styles.groupStack}>
         <View style={styles.group}>
           <View style={styles.buttonRow}>
@@ -28,10 +64,31 @@ render() {
           </View>
           <TouchableOpacity style={styles.button3}></TouchableOpacity>
         </View>
-        <Text style={styles.regio}>Regio - Provincie - {"\n"}Landelijk</Text>
+        <Text style={{
+          top: 0,
+          left: 0,
+          position: "absolute",
+          color: "rgba(197,142,42,1)",
+          fontSize: 25,
+          width: 375,
+          height: 72,
+          fontFamily: "Roboto_700Bold",
+        }}>Regio - Provincie - {"\n"}Landelijk</Text>
       </View>
-      <Text style={styles.afstand}>Afstand:</Text>
-      <Text style={styles.darkMode}>Dark mode:</Text>
+      <Text style={{
+        color: "rgba(197,142,42,1)",
+        fontSize: 25,
+        marginTop: -106,
+        marginLeft: 19,
+        fontFamily: "Roboto_700Bold",
+      }}>Afstand:</Text>
+      <Text style={{
+        color: "rgba(197,142,42,1)",
+        fontSize: 25,
+        marginTop: 72,
+        marginLeft: 20,
+        fontFamily: "Roboto_700Bold",
+      }}>Dark mode:</Text>
       <Switch
         value={false}
         thumbColor="rgba(156,112,3,1)"
@@ -39,7 +96,13 @@ render() {
         disabled={false}
         style={styles.switch}
       ></Switch>
-      <Text style={styles.kleur}>Kleur:</Text>
+      <Text style={{
+        color: "rgba(197,142,42,1)",
+        fontSize: 25,
+        marginTop: 5,
+        marginLeft: 20,
+        fontFamily: "Roboto_700Bold",
+      }}>Kleur:</Text>
       <Svg viewBox="0 0 240 240" style={styles.ellipse}>
         <Ellipse
           strokeWidth={24}
@@ -52,14 +115,33 @@ render() {
         ></Ellipse>
       </Svg>
       <View style={styles.regio2Stack}>
-        <Text style={styles.regio2}>Regio:</Text>
+        <Text style={{
+          top: 0,
+          left: 0,
+          position: "absolute",
+          color: "rgba(197,142,42,1)",
+          fontSize: 25,
+          fontFamily: "Roboto_700Bold",
+        }}>Regio:</Text>
         <View style={styles.rotterdamStack}>
-          <Text style={styles.rotterdam}>test: {this.state.region}</Text>
+          <Text style={{
+            top: 34,
+            left: 0,
+            position: "absolute",
+            color: "rgba(197,142,42,1)",
+            fontSize: 25,
+            fontFamily: "AlfaSlabOne_400Regular",
+          }}>test: {this.state.region}</Text>
           <TouchableOpacity
             onPress={() => navigation.navigate("OwnRegion")}
             style={styles.button4}
           >
-            <Text style={styles.edit}>Edit</Text>
+            <Text style={{
+              color: "rgba(255,255,255,1)",
+              fontSize: 20,
+              alignSelf: "center",
+              fontFamily: "Roboto_700Bold",
+            }}>Edit</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -67,12 +149,18 @@ render() {
         onPress={() => navigation.navigate("NewsHome")}
         style={styles.button5}
       >
-        <Text style={styles.back1}>Back</Text>
+        <Text style={{
+          color: "rgba(255,255,255,1)",
+          fontSize: 20,
+          marginTop: 7,
+          marginLeft: 28,
+          fontFamily: "Roboto_700Bold",
+        }}>Back</Text>
       </TouchableOpacity>
     </View>
 
 
-  );
+  );}
 }  
 }
 

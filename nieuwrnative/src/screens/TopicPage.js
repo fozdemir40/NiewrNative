@@ -7,8 +7,28 @@ import {
   ScrollView
 } from "react-native";
 import CupertinoSearchBarBasic from "../components/CupertinoSearchBarBasic";
+import {
+  useFonts,
+  Roboto_400Regular,
+  Roboto_400Regular_Italic,
+  Roboto_700Bold,
+  Roboto_700Bold_Italic,
+} from '@expo-google-fonts/roboto'
+import { 
+  AlfaSlabOne_400Regular 
+} from '@expo-google-fonts/alfa-slab-one'
 
 function TopicPage(props) {
+  let [fontsLoaded] = useFonts({
+    Roboto_400Regular,
+    Roboto_400Regular_Italic,
+    Roboto_700Bold,
+    Roboto_700Bold_Italic,
+    AlfaSlabOne_400Regular 
+  });
+  if (!fontsLoaded) {
+    return <Text>Loading..</Text>
+  } else {
   return (
     <View style={styles.container}>
       <View style={styles.button17ColumnRow}>
@@ -17,12 +37,36 @@ function TopicPage(props) {
             onPress={() => props.navigation.navigate("NewsHome")}
             style={styles.button17}
           >
-            <Text style={styles.back1}>Back</Text>
+            <Text style={{
+              
+              color: "rgba(255,255,255,1)",
+              fontSize: 20,
+              marginTop: 7,
+              marginLeft: 28,
+              fontFamily: "Roboto_700Bold",}}>Back</Text>
           </TouchableOpacity>
-          <Text style={styles.preferences1}>Choose your topic trends.</Text>
+          <Text style={{   
+              
+              color: "rgba(197,142,42,1)",
+              fontSize: 50,
+              width: 286,
+              height: 199,
+              marginTop: 59,
+              fontFamily: "AlfaSlabOne_400Regular ",
+          }}>Choose your topic trends.</Text>
         </View>
       </View>
-      <Text style={styles.reccomendedTrends}>Reccomended trends:</Text>
+      <Text style={{
+        
+        
+        color: "rgba(210,164,51,1)",
+        fontSize: 15,
+        width: 177,
+        height: 20,
+        marginTop: 8,
+        marginLeft: 30,
+        fontFamily: "Roboto_700Bold",
+      }}>Reccomended trends:</Text>
       <View style={styles.buttonRow}>
         <TouchableOpacity style={styles.button}></TouchableOpacity>
         <TouchableOpacity style={styles.button2}></TouchableOpacity>
@@ -38,50 +82,122 @@ function TopicPage(props) {
           contentContainerStyle={styles.scrollArea_contentContainerStyle}
         >
           <TouchableOpacity style={styles.button4}>
-            <Text style={styles.sport}>Sport</Text>
+            <Text style={{
+              
+              color: "#121212",
+              marginTop: 11,
+              alignSelf: "center",
+              fontFamily: "Roboto_400Regular",}}>Sport</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button5}>
-            <Text style={styles.sport1}>Gaming</Text>
+            <Text style={{
+              
+              color: "#121212",
+              alignSelf: "center",
+              fontFamily: "Roboto_400Regular",
+            }}>Gaming</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button6}>
-            <Text style={styles.music}>Music</Text>
+            <Text style={{
+            color: "#121212",
+            marginTop: 11,
+            alignSelf: "center",
+            fontFamily: "Roboto_400Regular",}}>Music</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button7}>
-            <Text style={styles.politiek}>Politiek</Text>
+            <Text style={{
+            color: "#121212",
+            marginTop: 11,
+            alignSelf: "center",
+            fontFamily: "Roboto_400Regular",
+            }}>Politiek</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button8}>
-            <Text style={styles.films}>Films</Text>
+            <Text style={{
+            color: "#121212",
+            marginTop: 11,
+            alignSelf: "center",
+            fontFamily: "Roboto_400Regular",
+            }}>Films</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button9}>
-            <Text style={styles.buitenland}>Buitenland</Text>
+            <Text style={{
+            color: "#121212",
+            marginTop: 11,
+            alignSelf: "center",
+            fontFamily: "Roboto_400Regular",
+            }}>Buitenland</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button10}>
-            <Text style={styles.anime}>Anime</Text>
+            <Text style={{
+            color: "#121212",
+            marginTop: 11,
+            alignSelf: "center",
+            fontFamily: "Roboto_400Regular",
+            }}>Anime</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button11}>
-            <Text style={styles.educatie}>Educatie</Text>
+            <Text style={{
+              color: "#121212",
+            marginTop: 11,
+            alignSelf: "center",
+            fontFamily: "Roboto_400Regular",
+            }}>Educatie</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button12}>
-            <Text style={styles.sport8}>Science</Text>
+            <Text style={{
+              color: "#121212",
+            marginTop: 11,
+            alignSelf: "center",
+            fontFamily: "Roboto_400Regular",
+            }}>Science</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button13}>
-            <Text style={styles.feestdagen}>Feestdagen</Text>
+            <Text style={{
+              color: "#121212",
+            marginTop: 11,
+            alignSelf: "center",
+            fontFamily: "Roboto_400Regular",
+            }}>Feestdagen</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button14}>
-            <Text style={styles.business}>Business</Text>
+            <Text style={{
+              color: "#121212",
+            marginTop: 11,
+            alignSelf: "center",
+            fontFamily: "Roboto_400Regular",
+            }}>Business</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button15}>
-            <Text style={styles.hobbies}>Hobbies</Text>
+            <Text style={{
+              color: "#121212",
+            marginTop: 11,
+            alignSelf: "center",
+            fontFamily: "Roboto_400Regular",
+            }}>Hobbies</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button16}>
-            <Text style={styles.tv}>TV</Text>
+            <Text style={{
+              color: "#121212",
+            marginTop: 11,
+            alignSelf: "center",
+            fontFamily: "Roboto_400Regular",
+            }}>TV</Text>
           </TouchableOpacity>
         </ScrollView>
       </View>
-      <Text style={styles.chosenTopics}>Chosen topics:</Text>
+      <Text style={{
+        
+        color: "rgba(210,164,51,1)",
+        fontSize: 15,
+        width: 120,
+        height: 20,
+        marginLeft: 30,
+        fontFamily: "Roboto_700Bold",
+      }}>Chosen topics:</Text>
     </View>
   );
-}
+}}
 
 const styles = StyleSheet.create({
   container: {

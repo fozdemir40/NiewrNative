@@ -54,7 +54,7 @@ render() {
       <View style={styles.regio2Stack}>
         <Text style={styles.regio2}>Regio:</Text>
         <View style={styles.rotterdamStack}>
-          <Text style={styles.rotterdam}>test: {this.state.region}</Text>
+          <Text style={styles.rotterdam}>{this.state.region}</Text>
           <TouchableOpacity
             onPress={() => navigation.navigate("OwnRegion")}
             style={styles.button4}

@@ -7,55 +7,140 @@ import {
   TouchableOpacity
 } from "react-native";
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {
+  useFonts,
+  Roboto_400Regular,
+  Roboto_400Regular_Italic,
+  Roboto_700Bold,
+  Roboto_700Bold_Italic,
+} from '@expo-google-fonts/roboto'
+import { 
+  AlfaSlabOne_400Regular 
+} from '@expo-google-fonts/alfa-slab-one'
 
 function OwnRegion(props) {
+  let [fontsLoaded] = useFonts({
+    Roboto_400Regular,
+    Roboto_400Regular_Italic,
+    Roboto_700Bold,
+    Roboto_700Bold_Italic,
+    AlfaSlabOne_400Regular 
+  });
+  if (!fontsLoaded) {
+    return <Text>Loading..</Text>
+  } else {
 
   return (
     <View style={styles.container}>
       <View style={styles.selectYourLocationColumn}>
         
         
-        <Text style={styles.selectYourLocation}>Select Your Location</Text>
+        <Text style={{
+          color: "rgba(197,142,42,1)",
+          fontSize: 60,
+          width: 322,
+          height: 239,
+          marginTop: 143,
+          marginLeft: 22,
+          fontFamily: "AlfaSlabOne_400Regular",
+        }}>Select Your Location</Text>
         <View style={styles.scrollArea1}>
           <ScrollView
             horizontal={false}
             contentContainerStyle={styles.scrollArea1_contentContainerStyle}
           >
             <TouchableOpacity style={styles.button3}>
-              <Text onPress={() => AsyncStorage.setItem('@region', "Flevoland") &&  props.navigation.navigate("RegionSelect")}  style={styles.flevoland}>Flevoland</Text>
+              <Text onPress={() => AsyncStorage.setItem('@region', "Flevoland") &&  props.navigation.navigate("RegionSelect")}  style={{
+                color: "#121212",
+                marginTop: 11,
+                alignSelf: "center",
+                fontFamily: "Roboto_400Regular",
+              }}>Flevoland</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.button4}>
-              <Text onPress={() => AsyncStorage.setItem('@region', "Drenthe") &&  props.navigation.navigate("RegionSelect")} style={styles.zuidHolland}>Drenthe</Text>
+              <Text onPress={() => AsyncStorage.setItem('@region', "Drenthe") &&  props.navigation.navigate("RegionSelect")} style={{
+                color: "#121212",
+                marginTop: 11,
+                alignSelf: "center",
+                fontFamily: "Roboto_400Regular",
+              }}>Drenthe</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.button5}>
-              <Text onPress={() => AsyncStorage.setItem('@region', "Friesland") &&  props.navigation.navigate("RegionSelect")} style={styles.friesland}>Friesland</Text>
+              <Text onPress={() => AsyncStorage.setItem('@region', "Friesland") &&  props.navigation.navigate("RegionSelect")} style={{
+                color: "#121212",
+                marginTop: 11,
+                alignSelf: "center",
+                fontFamily: "Roboto_400Regular",
+              }}>Friesland</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.button6}>
-              <Text onPress={() => AsyncStorage.setItem('@region', "Gelderland") &&  props.navigation.navigate("RegionSelect")} style={styles.gelderland3}>Gelderland</Text>
+              <Text onPress={() => AsyncStorage.setItem('@region', "Gelderland") &&  props.navigation.navigate("RegionSelect")} style={{
+                color: "#121212",
+                marginTop: 11,
+                alignSelf: "center",
+                fontFamily: "Roboto_400Regular",
+              }}>Gelderland</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.button7}>
-              <Text onPress={() => AsyncStorage.setItem('@region', "Groningen") &&  props.navigation.navigate("RegionSelect")} style={styles.groningen}>Groningen</Text>
+              <Text onPress={() => AsyncStorage.setItem('@region', "Groningen") &&  props.navigation.navigate("RegionSelect")} style={{
+                color: "#121212",
+                marginTop: 11,
+                alignSelf: "center",
+                fontFamily: "Roboto_400Regular",
+              }}>Groningen</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.button8}>
-              <Text onPress={() => AsyncStorage.setItem('@region', "Noord-Holland") &&  props.navigation.navigate("RegionSelect")} style={styles.noordHolland}>Noord-Holland</Text>
+              <Text onPress={() => AsyncStorage.setItem('@region', "Noord-Holland") &&  props.navigation.navigate("RegionSelect")} style={{
+                color: "#121212",
+                marginTop: 11,
+                alignSelf: "center",
+                fontFamily: "Roboto_400Regular",
+              }}>Noord-Holland</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.button9}>
-              <Text onPress={() => AsyncStorage.setItem('@region', "Overijssel") &&  props.navigation.navigate("RegionSelect")} style={styles.overijssel}>Overijssel</Text>
+              <Text onPress={() => AsyncStorage.setItem('@region', "Overijssel") &&  props.navigation.navigate("RegionSelect")} style={{
+                color: "#121212",
+                marginTop: 11,
+                alignSelf: "center",
+                fontFamily: "Roboto_400Regular",
+              }}>Overijssel</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.button10}>
-              <Text onPress={() => AsyncStorage.setItem('@region', "Utrecht") &&  props.navigation.navigate("RegionSelect")} style={styles.utrecht}>Utrecht</Text>
+              <Text onPress={() => AsyncStorage.setItem('@region', "Utrecht") &&  props.navigation.navigate("RegionSelect")} style={{
+                color: "#121212",
+                marginTop: 11,
+                alignSelf: "center",
+                fontFamily: "Roboto_400Regular",
+              }}>Utrecht</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.button13}>
-              <Text onPress={() => AsyncStorage.setItem('@region', "Noord-Brabant") &&  props.navigation.navigate("RegionSelect")} style={styles.noordBrabant}>Noord-Brabant</Text>
+              <Text onPress={() => AsyncStorage.setItem('@region', "Noord-Brabant") &&  props.navigation.navigate("RegionSelect")} style={{
+                color: "#121212",
+                marginTop: 11,
+                alignSelf: "center",
+                fontFamily: "Roboto_400Regular",
+              }}>Noord-Brabant</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.button14}>
-              <Text onPress={() => AsyncStorage.setItem('@region', "Utrecht") &&  props.navigation.navigate("RegionSelect")} style={styles.utrecht2}>Utrecht</Text>
+              <Text onPress={() => AsyncStorage.setItem('@region', "Utrecht") &&  props.navigation.navigate("RegionSelect")} style={{
+
+              }}>Utrecht</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.button15}>
-              <Text onPress={() => AsyncStorage.setItem('@region', "Zuid-Holland") &&  props.navigation.navigate("RegionSelect")} style={styles.zuidHolland2}>Zuid-Holland</Text>
+              <Text onPress={() => AsyncStorage.setItem('@region', "Zuid-Holland") &&  props.navigation.navigate("RegionSelect")} style={{
+                color: "#121212",
+                marginTop: 11,
+                alignSelf: "center",
+                fontFamily: "Roboto_400Regular",
+              }}>Zuid-Holland</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.button16}>
-              <Text onPress={() => AsyncStorage.setItem('@region', "Limburg") &&  props.navigation.navigate("RegionSelect")} style={styles.limburg2}>Limburg</Text>
+              <Text onPress={() => AsyncStorage.setItem('@region', "Limburg") &&  props.navigation.navigate("RegionSelect")} style={{
+                color: "#121212",
+                marginTop: 11,
+                alignSelf: "center",
+                fontFamily: "Roboto_400Regular",
+              }}>Limburg</Text>
             </TouchableOpacity>
           </ScrollView>
         </View>
@@ -64,11 +149,17 @@ function OwnRegion(props) {
       onPress={() => props.navigation.navigate("SettingPage")}
       style={styles.button20}
     >
-      <Text style={styles.back1}>Back</Text>
+      <Text style={{
+        color: "rgba(255,255,255,1)",
+        fontSize: 20,
+        marginTop: 7,
+        marginLeft: 28,
+        fontFamily: "Roboto_700Bold",
+      }}>Back</Text>
     </TouchableOpacity>
     </View>
   );
-}
+}}
 
 const styles = StyleSheet.create({
   container: {

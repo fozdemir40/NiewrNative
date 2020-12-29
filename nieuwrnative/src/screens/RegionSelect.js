@@ -1,14 +1,49 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Text, TouchableOpacity} from "react-native";
 import Svg, { Ellipse } from "react-native-svg";
+import {
+  useFonts,
+  Roboto_400Regular,
+  Roboto_400Regular_Italic,
+  Roboto_700Bold,
+  Roboto_700Bold_Italic,
+} from '@expo-google-fonts/roboto'
+import { 
+  AlfaSlabOne_400Regular 
+} from '@expo-google-fonts/alfa-slab-one'
 
 function RegionSelect(props) {
+  let [fontsLoaded] = useFonts({
+    Roboto_400Regular,
+    Roboto_400Regular_Italic,
+    Roboto_700Bold,
+    Roboto_700Bold_Italic,
+    AlfaSlabOne_400Regular 
+  });
+  if (!fontsLoaded) {
+    return <Text>Loading..</Text>
+  } else {
   return (
     <View style={styles.container}>
       <View style={styles.groupColumn}>
         <View style={styles.group}>
-          <Text style={styles.selectRegion}>Select {"\n"}Region</Text>
-          <Text style={styles.changeableInPref}>Changable in preferences</Text>
+          <Text style={{
+            color: "rgba(197,142,42,1)",
+            fontSize: 60,
+            width: 322,
+            height: 153,
+            marginTop: -177,
+            fontFamily: "AlfaSlabOne_400Regular",
+          }}>Select {"\n"}Region</Text>
+          <Text style={{
+            
+            color: "rgba(210,164,51,1)",
+            fontSize: 15,
+            width: 310,
+            height: 34,
+            marginTop: 24,
+            fontFamily: "Roboto_700Bold",
+          }}>Changable in preferences</Text>
         </View>
         <View style={styles.group2}>
           <View style={styles.land_circleStack}>
@@ -23,7 +58,14 @@ function RegionSelect(props) {
                 ry={237}
               ></Ellipse>
             </Svg>
-            <Text style={styles.land}>Land</Text>
+            <Text style={{
+              position: "absolute",
+              color: "rgba(175,133,25,1)",
+              fontSize: 30,
+              top: 23,
+              left: 198,
+              fontFamily: "AlfaSlabOne_400Regular",
+            }}>Land</Text>
             <Svg viewBox="0 0 334 334" style={styles.provincie_circle}>
               <Ellipse
                 stroke="rgba(230, 230, 230,1)"
@@ -35,7 +77,14 @@ function RegionSelect(props) {
                 ry={167}
               ></Ellipse>
             </Svg>
-            <Text style={styles.provincie}>Provincie</Text>
+            <Text style={{
+              position: "absolute",
+              color: "rgba(175,133,25,1)",
+              fontSize: 30,
+              top: 99,
+              left: 161,
+              fontFamily: "AlfaSlabOne_400Regular",
+            }}>Provincie</Text>
             <Svg viewBox="0 0 182 182" style={styles.regio_circle}>
               <Ellipse
                 stroke="rgba(230, 230, 230,1)"
@@ -47,7 +96,14 @@ function RegionSelect(props) {
                 ry={91}
               ></Ellipse>
             </Svg>
-            <Text style={styles.regio}>Regio</Text>
+            <Text style={{
+              position: "absolute",
+              color: "rgba(175,133,25,1)",
+              fontSize: 30,
+              top: 212,
+              left: 192,
+              fontFamily: "AlfaSlabOne_400Regular",
+            }}>Regio</Text>
           </View>
         </View>
       </View>
@@ -58,12 +114,18 @@ function RegionSelect(props) {
         style={styles.button}
       >
         <View style={styles.startHere1Filler}></View>
-        <Text style={styles.startHere1}>Start here</Text>
+        <Text style={{
+          color: "rgba(255,255,255,1)",
+          fontSize: 20,
+          width: 139,
+          alignSelf: "center",
+          fontFamily: "Roboto_700Bold",
+        }}>Start here</Text>
       </TouchableOpacity>  
       </View>
     </View>
   );
-}
+}}
 
 const styles = StyleSheet.create({
   container: {
@@ -93,7 +155,8 @@ const styles = StyleSheet.create({
   },
   group2: {
     width: 475,
-    height: 475
+    height: 475,
+    marginTop: 40
   },
   land_circle: {
     top: 0,

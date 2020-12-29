@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "BxProject",
-    "slug": "BxProject",
+    "name": "Niewr",
+    "slug": "Niewr",
     "privacy": "public",
     "platforms": [
       "ios",
@@ -14,7 +14,13 @@
       "fallbackToCacheTimeout": 0
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.regiogroeiA.Niewr",
+      "buildNumber": "1.0.0"
+    },
+    "android":{
+      "package": "com.regiogroeiA.Niewr",
+      "versionCode": 1
     }
   }
 }

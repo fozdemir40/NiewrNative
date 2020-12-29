@@ -8,8 +8,29 @@ import {
   TouchableOpacity
 } from "react-native";
 import Svg, { Ellipse, Path, Circle, Rect } from "react-native-svg";
+import {
+  useFonts,
+  Roboto_400Regular,
+  Roboto_400Regular_Italic,
+  Roboto_700Bold,
+  Roboto_700Bold_Italic,
+} from '@expo-google-fonts/roboto'
+import { 
+  AlfaSlabOne_400Regular 
+} from '@expo-google-fonts/alfa-slab-one'
+
 
 function DetailPage({navigation}) {
+  let [fontsLoaded] = useFonts({
+    Roboto_400Regular,
+    Roboto_400Regular_Italic,
+    Roboto_700Bold,
+    Roboto_700Bold_Italic,
+    AlfaSlabOne_400Regular 
+  });
+  if (!fontsLoaded) {
+    return <Text>Loading..</Text>
+  } else {
   const itemId = navigation.getParam('itemId')
   const imageUrlArticle = navigation.getParam('imageUrl')
   const titleArticle = navigation.getParam('titleArticle')
@@ -40,12 +61,26 @@ function DetailPage({navigation}) {
                     style={styles.image}
                   ></Image>
                   <View style={styles.group2}>
-                    <Text style={styles.e2}>
+                    <Text style={{
+                      
+                      color: "#121212",
+                      fontSize: 14,
+                      marginTop: 21,
+                      alignSelf: "center",
+                      fontFamily: "Roboto_700Bold",}}>
                       {article.title}
                     </Text>
                   </View>
                 </View>
-                <Text style={styles.loremIpsum}>
+                <Text style={{
+                  top: 260,
+                  left: 0,
+                  position: "absolute",
+                  color: "#121212",
+                  textAlign: "left",
+                  width: 256,
+                  height: 270,
+                  fontFamily: "Roboto_400Regular",}}>
                   {article.content}
                 </Text>
                 <Svg
@@ -99,10 +134,17 @@ function DetailPage({navigation}) {
               <View style={styles.group3}>
                 <View style={styles.rect2Stack}>
                   <View style={styles.rect2}>
-                    <Text style={styles.rotterdam}>
+                    <Text style={{
+                      color: "#121212",
+                      marginTop: 5,
+                      marginLeft: 34,
+                      fontFamily: "Roboto_700Bold",}}>
                       Rotterdam: 36 minuten geleden
                     </Text>
-                    <Text style={styles.bronRegiogroeiA}>
+                    <Text style={{
+                    color: "#121212",
+                    marginLeft: 34,
+                    fontFamily: "Roboto_400Regular_Italic",}}>
                       Bron: Regiogroei A
                     </Text>
                   </View>
@@ -138,12 +180,20 @@ function DetailPage({navigation}) {
         </ScrollView>
       </View>
       <View style={styles.regioRow}>
-        <Text style={styles.regio}>Regio</Text>
+        <Text style={{
+          color: "rgba(170,105,8,1)",
+          fontSize: 50,
+          fontFamily: "Roboto_700Bold",}}>Regio</Text>
         <TouchableOpacity
           onPress={() => navigation.navigate('NewsHome')}
           style={styles.button4}
         >
-          <Text style={styles.back1}>Back</Text>
+          <Text style={{
+          color: "rgba(255,255,255,1)",
+          fontSize: 20,
+          marginTop: 7,
+          marginLeft: 28,
+          fontFamily: "Roboto_700Bold",}}>Back</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -152,79 +202,80 @@ function DetailPage({navigation}) {
       <View style={styles.rect3Filler}></View>
       <View style={styles.rect3}>
       <View style={styles.button23Stack}>
-          <TouchableOpacity style={styles.button23}>
-          <Svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 256 256"
-          style={styles.icon5}
-        >
-          <Path fill="none" d="M0 0h256v256H0z" />
-          <Circle
-            cx={128}
-            cy={128}
-            r={88}
-            fill="none"
-            stroke="#000"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={16}
-          />
-          <Path
-            fill="none"
-            stroke="#000"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={16}
-            d="M128 20v40M20 128h40M128 236v-40M236 128h-40"
-          />
-          <Circle
-            cx={128}
-            cy={128}
-            r={32}
-            fill="none"
-            stroke="#000"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={16}
-          />
-        </Svg>
-          </TouchableOpacity>
+      <TouchableOpacity style={styles.button23}>
+      <Svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 256 256"
+              style={styles.icon7}
+            >
+                <Path fill="none" d="M0 0h256v256H0z" />
+                <Rect
+                  x={40}
+                  y={40}
+                  width={176}
+                  height={176}
+                  rx={8}
+                  strokeWidth={16}
+                  stroke="#000"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  fill="none"
+                />
+                <Path
+                  fill="none"
+                  stroke="#000"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={16}
+                  d="M176 24v32M80 24v32M40 88h176M92 127.997h28l-16 20a16 16 0 11-11.307 27.32M144 139.997l16-12v52"
+                />
+              </Svg>
+      </TouchableOpacity>
           <View style={styles.group12}>
             <View style={styles.group13}>
               <View style={styles.button25Filler}></View>
-              <TouchableOpacity style={styles.button25}>
-                  <Svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 256 256"
-                  style={styles.icon7}
-                >
-                    <Path fill="none" d="M0 0h256v256H0z" />
-                    <Rect
-                      x={40}
-                      y={40}
-                      width={176}
-                      height={176}
-                      rx={8}
-                      strokeWidth={16}
-                      stroke="#000"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      fill="none"
-                    />
-                    <Path
-                      fill="none"
-                      stroke="#000"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={16}
-                      d="M176 24v32M80 24v32M40 88h176M92 127.997h28l-16 20a16 16 0 11-11.307 27.32M144 139.997l16-12v52"
-                    />
-                  </Svg>
-              </TouchableOpacity>
+              <TouchableOpacity style={styles.button25} onPress={() => navigation.navigate("RegionSelect")}>
+                <Svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 256 256"
+            style={styles.icon5}
+          >
+            <Path fill="none" d="M0 0h256v256H0z" />
+            <Circle
+              cx={128}
+              cy={128}
+              r={88}
+              fill="none"
+              stroke="#000"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={16}
+            />
+            <Path
+              fill="none"
+              stroke="#000"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={16}
+              d="M128 20v40M20 128h40M128 236v-40M236 128h-40"
+            />
+            <Circle
+              cx={128}
+              cy={128}
+              r={32}
+              fill="none"
+              stroke="#000"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={16}
+            />
+          </Svg>
+                    
+                </TouchableOpacity>
             </View>
             <View style={styles.group13Filler}></View>
             <TouchableOpacity
-              onPress={() => props.navigation.navigate("SettingPage")}
+              onPress={() => navigation.navigate("SettingPage")}
               style={styles.button24}
             >
               <Svg
@@ -249,7 +300,7 @@ function DetailPage({navigation}) {
     </View>
   </View>
   );
-}
+}}
 
 const styles = StyleSheet.create({
   container: {
@@ -386,7 +437,7 @@ const styles = StyleSheet.create({
     position: "absolute"
   },
   loremIpsum: {
-    top: 230,
+    top: 260,
     left: 0,
     position: "absolute",
     fontFamily: "roboto-regular",
@@ -425,10 +476,7 @@ const styles = StyleSheet.create({
     width: 239,
     height: 43,
     position: "absolute",
-    backgroundColor: "rgba(255,255,255,1)",
-    borderWidth: 2,
-    borderColor: "#000000",
-    borderRadius: 7
+    backgroundColor: "rgba(255,255,255,1)"
   },
   rotterdam: {
     fontFamily: "roboto-700",
@@ -442,12 +490,13 @@ const styles = StyleSheet.create({
     marginLeft: 34
   },
   icon2: {
+    height: 30,
     top: 0,
-    left: -110,
+    left: 0,
     position: "absolute",
     color: "rgba(0,0,0,1)",
-    fontSize: 40,
-    padding: 30
+    fontSize: 20,
+    padding: 5
   },
   rect2Stack: {
     width: 239,
